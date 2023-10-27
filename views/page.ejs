@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(224, 250, 220);
+        }
+        h2{
+            text-align: center;
+            color: rgb(3, 68, 21);
+        }
+        .table-wrapper{
+            /* width:100%; */
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: rgb(3, 68, 21);
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #dce764;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+    </style>
+</head>
+<body>
+    <h2 >Routine List</h2>
+    <form action="/api/page" method="post">
+        
+        <div class="table-wrapper">
+            <table class="fl-table">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Breakfast</th>
+                    <th>Brunch</th>
+                    <th>Lunch</th>
+                    <th>Snacks</th>
+                    <th>Dinner</th>
+                </tr>
+                </thead>
+                <tbody>
+    <% users.map(val=>{ %>
+
+        <tr>
+            <td><%= val.Date %></td>
+            <td><%= val.Breakfast %></td>
+            <td><%= val.Brunch %></td>
+            <td><%= val.Lunch %></td>
+            <td><%= val.Snacks %></td>
+            <td><%= val.Dinner %></td>
+           
+         
+        </tr>
+        <%   })    %>
+       
+      
+        <tbody>
+    </table>
+</div>
+        </form>
+
+
+   
+</body>
+</html>
